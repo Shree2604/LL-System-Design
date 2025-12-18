@@ -39,14 +39,22 @@ graph TD
     D --> D1[UML Diagram.pdf]
     D --> D2[Day02.pdf]
     
+    %% Root Level Files
+    A --> A1[README.md]
+    A --> A2[LICENSE]
+    
     %% Styling
     classDef folder fill:#2b2b2b,stroke:#4a4a4a,color:#e0e0e0,stroke-width:2px
     classDef file fill:#1e3a8a,stroke:#3b82f6,color:#e0e0e0,stroke-width:2px
     classDef doc fill:#1e3a1e,stroke:#10b981,color:#e0e0e0,stroke-width:2px
+    classDef readme fill:#5b21b6,stroke:#8b5cf6,color:#e0e0e0,stroke-width:2px
+    classDef license fill:#9d174d,stroke:#ec4899,color:#e0e0e0,stroke-width:2px
     
     class A,C1,C11,C12,B1 folder
     class B11,B12,C111,C112,C121,C122 file
     class B2,C2,D1,D2 doc
+    class A1 readme
+    class A2 license
 ```
 
 
