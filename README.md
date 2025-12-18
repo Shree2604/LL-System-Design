@@ -12,7 +12,7 @@ This repository is a comprehensive collection of Low-Level System Design pattern
 ## 📂 Repository Structure
 ```
 LL-System-Design/
-├── Video-Player/         # Video Player System Design
+├── Video-Player/         # Basic Video Player System Design
 │   ├── Code/    
 │   └── README.md         
 ├── Day01/                # Day 1: [Topic]
@@ -36,7 +36,7 @@ LL-System-Design/
 
 | Day | Topic | Status |
 |-----|-------|--------|
-| 00  | [Video Player System Design]() | ✀ |
+| 00  | [Basic Video Player System Design]() | ✀ |
 
 ## 🚀 Getting Started
 1. Clone the repository
