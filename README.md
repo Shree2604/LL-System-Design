@@ -47,23 +47,6 @@ graph TD
 
 ## 📅 Daily Progress
 
-```mermaid
-gantt
-    title Project Timeline
-    dateFormat  YYYY-MM-DD
-    axisFormat %b %d
-    
-    section Completed
-    Video Player     :done, 2025-12-15, 3d
-    OOPs & SOLID     :done, 2025-12-18, 2d
-    
-    section In Progress
-    System Design Basics :active, 2025-12-19, 5d
-    
-    section Upcoming
-    Advanced Patterns    : after des3, 5d
-    Real-world Systems   : after des4, 5d
-```
 
 | Day | Topic | Status |
 |-----|-------|--------|
@@ -72,21 +55,10 @@ gantt
 
 ## 🚀 Getting Started
 
-```mermaid
-flowchart TD
-    A[Clone Repository] --> B[Explore Patterns]
-    B --> C[Study Implementations]
-    C --> D[Try Your Own Solutions]
-    D --> E[Compare & Learn]
-    
-    %% Styling
-    classDef step fill:#2b2b2b,stroke:#4a4a4a,color:#e0e0e0,stroke-width:2px
-    class A,B,C,D,E step
-```
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/LL-System-Design.git
+   git clone https://github.com/Shree2604/LL-System-Design.git
    cd LL-System-Design
    ```
 
