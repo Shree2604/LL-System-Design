@@ -46,10 +46,8 @@ graph TD
     
     class A,C1,C11,C12,B1 folder
     class B11,B12,C111,C112,C121,C122 file
-    class B2,C2,D2 doc
+    class B2,C2,D1,D2 doc
 ```
-
-## 📅 Daily Progress
 
 
 | Day | Topic | 
