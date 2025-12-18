@@ -54,21 +54,15 @@ gantt
     axisFormat %b %d
     
     section Completed
-    Video Player     :done, des1, 2025-12-15, 3d
-    OOPs & SOLID     :done, des2, 2025-12-18, 2d
+    Video Player     :done, 2025-12-15, 3d
+    OOPs & SOLID     :done, 2025-12-18, 2d
     
     section In Progress
-    System Design Basics :active, des3, 2025-12-19, 5d
+    System Design Basics :active, 2025-12-19, 5d
     
     section Upcoming
-    Advanced Patterns    : des4, after des3, 5d
-    Real-world Systems   : des5, after des4, 5d
-    
-    %% Styling - Note: Gantt charts have limited styling in Mermaid
-    %% We'll use task states for theming
-    class des1,des2 done
-    class des3 active
-    class des4,des5 critical
+    Advanced Patterns    : after des3, 5d
+    Real-world Systems   : after des4, 5d
 ```
 
 | Day | Topic | Status |
