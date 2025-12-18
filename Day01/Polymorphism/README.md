@@ -19,17 +19,20 @@ classDiagram
         +assignOrder(String partnerName, String vehicle)
     }
     
+    %% Define relationships
     DeliveryPartner <|-- BikePartner : extends
     DeliveryPartner <|-- CarPartner : extends
     
-    %% Styling for dark theme
+    %% Define styles
     classDef base fill:#2b2b2b,stroke:#4a4a4a,color:#e0e0e0,stroke-width:2px
     classDef child fill:#1e3a8a,stroke:#3b82f6,color:#e0e0e0,stroke-width:2px
     classDef util fill:#1e3a1e,stroke:#10b981,color:#e0e0e0,stroke-width:2px
     
-    class DeliveryPartner,OrderHelper base
-    class BikePartner,CarPartner child
-    style OrderHelper util
+    %% Apply styles to classes
+    class DeliveryPartner base
+    class OrderHelper util
+    class BikePartner child
+    class CarPartner child
 ```
 
 ## Architecture Overview
