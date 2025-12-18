@@ -46,17 +46,17 @@ graph TD
     
     class A,C1,C11,C12,B1 folder
     class B11,B12,C111,C112,C121,C122 file
-    class B2,C2 doc
+    class B2,C2,D2 doc
 ```
 
 ## 📅 Daily Progress
 
 
-| Day | Topic | Status |
-|-----|-------|--------|
-| 00  | [Basic Video Player System Design](Video-Player/) | ✅ Completed |
-| 01  | [OOPs & SOLID Principles](Day01/) | ✅ Completed |
-| 02  | [UML Diagram & Types of Design Patterns](Day02/) | ✅ Completed |
+| Day | Topic | 
+|-----|-------|
+| 00  | [Basic Video Player System Design](Video-Player/) |
+| 01  | [OOPs & SOLID Principles](Day01/) |
+| 02  | [UML Diagram & Types of Design Patterns](Day02/) |
 
 ## 🚀 Getting Started
 
