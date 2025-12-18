@@ -1,0 +1,10 @@
+Beginner Explanation
+
+Compile-time polymorphism (Overloading):
+Method assignOrder is written in two versions (one with partner name only, one with partner name + vehicle).
+Java decides which one to call when you compile the program.
+
+Runtime polymorphism (Overriding):
+Parent class: DeliveryPartner has a method deliver.
+Child classes (BikePartner, CarPartner) override it.
+Which version gets executed depends on the object at runtime.

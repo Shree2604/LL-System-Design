@@ -13,21 +13,26 @@ This repository is a comprehensive collection of Low-Level System Design pattern
 ```
 LL-System-Design/
 ├── Video-Player/         # Basic Video Player System Design
-│   ├── Code/    
-│   └── README.md         
-├── Day01/                # Day 1: [Topic]
-│   ├── notes.md          
-│   ├── code/             
-│   └── README.md         
+│   ├── Code/ 
+│   │   ├── Java File
+│   │   └── README.md
+│   └── Video-Player.pdf
+├── Day01/                # Day 1: OOPs & SOLID Principles
+│   ├── Day01.pdf         
+│   ├── Code/               
+│   │   ├── Java File
+│   │   └── README.md
 ├── Day02/                # Day 2: [Topic]
-│   ├── notes.md
-│   ├── code/
-│   └── README.md
+│   ├── Day02.pdf
+│   ├── Code/
+│   │   ├── Java File
+│   │   └── README.md
 ...
 ├── Day15/                # Day 15: [Topic]
-│   ├── notes.md
-│   ├── code/
-│   └── README.md
+│   ├── Day15.pdf
+│   ├── Code/
+│   │   ├── Java File
+│   │   └── README.md
 
 
 ```
@@ -37,6 +42,7 @@ LL-System-Design/
 | Day | Topic | Status |
 |-----|-------|--------|
 | 00  | [Basic Video Player System Design]() | ✀ |
+| 01  | [OOPs & SOLID Principles]() | ✀ |
 
 ## 🚀 Getting Started
 1. Clone the repository
