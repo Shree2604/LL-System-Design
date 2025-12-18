@@ -75,8 +75,8 @@ classDiagram
 graph TD
     A[DeliveryPartner] -->|Responsibility| B[Deliver Orders]
     
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style A fill:#2b2b2b,stroke:#4a4a4a,color:#e0e0e0,stroke-width:2px
+    style B fill:#1e3a8a,stroke:#3b82f6,color:#e0e0e0,stroke-width:2px
 ```
 
 ### 2. Open/Closed Principle (OCP)
@@ -85,9 +85,9 @@ graph TD
     A[DeliveryVehicle] -->|Extended by| B[Bike]
     A -->|Extended by| C[Car]
     
-    style A fill:#9f9,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style C fill:#bbf,stroke:#333,stroke-width:2px
+    style A fill:#1e3a1e,stroke:#10b981,color:#e0e0e0,stroke-width:2px
+    style B fill:#1e3a8a,stroke:#3b82f6,color:#e0e0e0,stroke-width:2px
+    style C fill:#1e3a8a,stroke:#3b82f6,color:#e0e0e0,stroke-width:2px
 ```
 
 ### 3. Liskov Substitution Principle (LSP)
@@ -96,8 +96,9 @@ flowchart LR
     A[SwiggyDeliveryService] -->|Uses| B[DeliveryVehicle]
     B -->|Implemented by| C[Bike & Car]
     
-    style A fill:#ff9,stroke:#333,stroke-width:2px
-    style B fill:#9f9,stroke:#333,stroke-width:2px
+    style A fill:#5b21b6,stroke:#8b5cf6,color:#e0e0e0,stroke-width:2px
+    style B fill:#1e3a1e,stroke:#10b981,color:#e0e0e0,stroke-width:2px
+    style C fill:#1e3a8a,stroke:#3b82f6,color:#e0e0e0,stroke-width:2px
 ```
 
 ### 4. Interface Segregation Principle (ISP)
@@ -120,6 +121,15 @@ classDiagram
     
     SwiggyPartner ..|> Deliverable
     SwiggyPartner ..|> Trackable
+    
+    classDef base fill:#2b2b2b,stroke:#4a4a4a,color:#e0e0e0,stroke-width:2px
+    classDef interface fill:#1e3a1e,stroke:#10b981,color:#e0e0e0,stroke-width:2px
+    classDef implementation fill:#1e3a8a,stroke:#3b82f6,color:#e0e0e0,stroke-width:2px
+    classDef app fill:#5b21b6,stroke:#8b5cf6,color:#e0e0e0,stroke-width:2px
+    
+    class SwiggyPartner app
+    class Deliverable interface
+    class Trackable interface
 ```
 
 ### 5. Dependency Inversion Principle (DIP)
@@ -142,9 +152,14 @@ classDiagram
     SwiggyApp --> PaymentService : depends on
     UpiPayment ..|> PaymentService : implements
     
-    style SwiggyApp fill:#f9f,stroke:#333,stroke-width:2px
-    style PaymentService fill:#9f9,stroke:#333,stroke-width:2px
-    style UpiPayment fill:#bbf,stroke:#333,stroke-width:2px
+    classDef base fill:#2b2b2b,stroke:#4a4a4a,color:#e0e0e0,stroke-width:2px
+    classDef interface fill:#1e3a1e,stroke:#10b981,color:#e0e0e0,stroke-width:2px
+    classDef implementation fill:#1e3a8a,stroke:#3b82f6,color:#e0e0e0,stroke-width:2px
+    classDef app fill:#5b21b6,stroke:#8b5cf6,color:#e0e0e0,stroke-width:2px
+    
+    class SwiggyApp app
+    class PaymentService interface
+    class UpiPayment implementation
 ```
 
 This project demonstrates the five SOLID principles of object-oriented programming using a Swiggy-like food delivery system as an example.

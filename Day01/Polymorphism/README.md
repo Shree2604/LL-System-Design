@@ -19,8 +19,17 @@ classDiagram
         +assignOrder(String partnerName, String vehicle)
     }
     
-    DeliveryPartner <|-- BikePartner
-    DeliveryPartner <|-- CarPartner
+    DeliveryPartner <|-- BikePartner : extends
+    DeliveryPartner <|-- CarPartner : extends
+    
+    %% Styling for dark theme
+    classDef base fill:#2b2b2b,stroke:#4a4a4a,color:#e0e0e0,stroke-width:2px
+    classDef child fill:#1e3a8a,stroke:#3b82f6,color:#e0e0e0,stroke-width:2px
+    classDef util fill:#1e3a1e,stroke:#10b981,color:#e0e0e0,stroke-width:2px
+    
+    class DeliveryPartner,OrderHelper base
+    class BikePartner,CarPartner child
+    style OrderHelper util
 ```
 
 ## Architecture Overview
@@ -31,9 +40,9 @@ graph TD
     A[DeliveryPartner] -->|extends| B[BikePartner]
     A -->|extends| C[CarPartner]
     
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style C fill:#bbf,stroke:#333,stroke-width:2px
+    style A fill:#2b2b2b,stroke:#4a4a4a,color:#e0e0e0,stroke-width:2px
+    style B fill:#1e3a8a,stroke:#3b82f6,color:#e0e0e0,stroke-width:2px
+    style C fill:#1e3a8a,stroke:#3b82f6,color:#e0e0e0,stroke-width:2px
 ```
 
 ### Compile-time Polymorphism (Method Overloading)
@@ -44,7 +53,7 @@ classDiagram
         +assignOrder(String partnerName, String vehicle)
     }
     
-    style OrderHelper fill:#9f9,stroke:#333,stroke-width:2px
+    style OrderHelper fill:#1e3a1e,stroke:#10b981,color:#e0e0e0,stroke-width:2px
 ```
 
 ## Types of Polymorphism Demonstrated

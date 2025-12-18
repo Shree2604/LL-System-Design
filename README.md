@@ -10,52 +10,99 @@ This repository is a comprehensive collection of Low-Level System Design pattern
 - Implement best practices for building scalable and maintainable systems
 
 ## 📂 Repository Structure
-```
-LL-System-Design/
-├── Video-Player/         # Basic Video Player System Design
-│   ├── Code/ 
-│   │   ├── Java File
-│   │   └── README.md
-│   └── Video-Player.pdf
-│ 
-├── Day01/                # Day 1: OOPs & SOLID Principles       
-│   ├── Code/
-│   │   ├── Polymorphism
-│   │   │   ├── Java File
-│   │   │   └── README.md
-│   │   └── SOLID Principles
-│   │       ├── Java File
-│   │       └── README.md
-│   └── Day01.pdf
-│ 
-├── Day02/                # Day 2: [Topic]
-│   ├── Day02.pdf
-│   ├── Code/
-│   │   ├── Java File
-│   │   └── README.md
-...
-├── Day15/                # Day 15: [Topic]
-│   ├── Day15.pdf
-│   ├── Code/
-│   │   ├── Java File
-│   │   └── README.md
-
-
+```mermaid
+graph TD
+    %% Main Repository Structure
+    A[LL-System-Design] --> B[Video-Player/]
+    A --> C[Day01/]
+    A --> D[Day02/]
+    A --> E[...]
+    A --> F[Day15/]
+    
+    %% Video-Player Structure
+    B --> B1[Code/]
+    B1 --> B11[Java File]
+    B1 --> B12[README.md]
+    B --> B2[Video-Player.pdf]
+    
+    %% Day01 Structure
+    C --> C1[Code/]
+    C1 --> C11[Polymorphism/]
+    C11 --> C111[Java File]
+    C11 --> C112[README.md]
+    C1 --> C12[SOLID Principles/]
+    C12 --> C121[Java File]
+    C12 --> C122[README.md]
+    C --> C2[Day01.pdf]
+    
+    %% Styling
+    classDef folder fill:#2b2b2b,stroke:#4a4a4a,color:#e0e0e0,stroke-width:2px
+    classDef file fill:#1e3a8a,stroke:#3b82f6,color:#e0e0e0,stroke-width:2px
+    classDef doc fill:#1e3a1e,stroke:#10b981,color:#e0e0e0,stroke-width:2px
+    
+    class A,C1,C11,C12,B1 folder
+    class B11,B12,C111,C112,C121,C122 file
+    class B2,C2 doc
 ```
 
 ## 📅 Daily Progress
 
+```mermaid
+gantt
+    title Project Timeline
+    dateFormat  YYYY-MM-DD
+    axisFormat %b %d
+    
+    section Completed
+    Video Player     :done,    des1, 2025-12-15, 3d
+    OOPs & SOLID     :done,    des2, 2025-12-18, 2d
+    
+    section In Progress
+    System Design Basics :active, des3, 2025-12-19, 5d
+    
+    section Upcoming
+    Advanced Patterns    :         des4, after des3, 5d
+    Real-world Systems   :         des5, after des4, 5d
+    
+    %% Styling
+    classDef done fill:#1e3a1e,stroke:#10b981,color:#e0e0e0,stroke-width:1px
+    classDef active fill:#1e3a8a,stroke:#3b82f6,color:#e0e0e0,stroke-width:1px
+    classDef todo fill:#2b2b2b,stroke:#4a4a4a,color:#a0a0a0,stroke-width:1px
+    
+    class des1,des2 done
+    class des3 active
+    class des4,des5 todo
+```
+
 | Day | Topic | Status |
 |-----|-------|--------|
-| 00  | [Basic Video Player System Design]() | ✀ |
-| 01  | [OOPs & SOLID Principles]() | ✀ |
+| 00  | [Basic Video Player System Design](#) | ✅ Completed |
+| 01  | [OOPs & SOLID Principles](#) | ✅ Completed |
 
 ## 🚀 Getting Started
-1. Clone the repository
-2. Explore different design patterns and case studies
-3. Study the implementation details
-4. Try to implement your own solutions
-5. Compare with the provided solutions
+
+```mermaid
+flowchart TD
+    A[Clone Repository] --> B[Explore Patterns]
+    B --> C[Study Implementations]
+    C --> D[Try Your Own Solutions]
+    D --> E[Compare & Learn]
+    
+    %% Styling
+    classDef step fill:#2b2b2b,stroke:#4a4a4a,color:#e0e0e0,stroke-width:2px
+    class A,B,C,D,E step
+```
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/LL-System-Design.git
+   cd LL-System-Design
+   ```
+
+2. **Explore different design patterns** and case studies
+3. **Study the implementation details** in the code
+4. **Try to implement your own solutions** before looking at the provided ones
+5. **Compare** your solutions with the provided implementations
 
 ## 🤝 Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.

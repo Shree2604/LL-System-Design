@@ -12,11 +12,12 @@ graph TD
     D -->|6. Return Frames| B
     B -->|7. Return Video Data| A
     
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style C fill:#cfc,stroke:#333,stroke-width:2px
-    style D fill:#fbb,stroke:#333,stroke-width:2px
-    style E fill:#ffd,stroke:#333,stroke-width:2px
+    %% Dark theme styling
+    style A fill:#2b2b2b,stroke:#4a4a4a,color:#e0e0e0,stroke-width:2px  /* Client */
+    style B fill:#1e3a8a,stroke:#3b82f6,color:#e0e0e0,stroke-width:2px  /* VideoConsumingService */
+    style C fill:#1e3a1e,stroke:#10b981,color:#e0e0e0,stroke-width:2px  /* Database */
+    style D fill:#5b21b6,stroke:#8b5cf6,color:#e0e0e0,stroke-width:2px  /* VideoService */
+    style E fill:#9d174d,stroke:#ec4899,color:#e0e0e0,stroke-width:2px  /* FileSystem */
 ```
 
 ## Component Interactions
@@ -73,6 +74,13 @@ graph TD
 
 ```mermaid
 classDiagram
+    %% Styling for dark theme
+    classDef client fill:#2b2b2b,stroke:#4a4a4a,color:#e0e0e0,stroke-width:2px
+    classDef service fill:#1e3a8a,stroke:#3b82f6,color:#e0e0e0,stroke-width:2px
+    classDef storage fill:#1e3a1e,stroke:#10b981,color:#e0e0e0,stroke-width:2px
+    classDef video fill:#5b21b6,stroke:#8b5cf6,color:#e0e0e0,stroke-width:2px
+    classDef filesys fill:#9d174d,stroke:#ec4899,color:#e0e0e0,stroke-width:2px
+    
     class VideoConsumingService {
         -Database database
         +seekTime(videoID, userID, seekTime)
@@ -111,24 +119,44 @@ classDiagram
     VideoService --> FileSystem
     FileSystem --> Video
     Video --> Frame
+    
+    class VideoConsumingService,VideoService service
+    class Database storage
+    class FileSystem filesys
+    class Video,Frame video
 ```
 
 ## Sequence Diagram: Frame Retrieval
 
 ```mermaid
 sequenceDiagram
+    %% Styling for dark theme
     participant C as Client
     participant VCS as VideoConsumingService
     participant VS as VideoService
     participant FS as FileSystem
     
+    %% Set participant colors
+    rect rgba(0, 0, 0, 0.1)
+    Note over C,FS: Dark Theme - Video Frame Retrieval
+    end
+    
     C->>VCS: getFrame(videoID, userID, timestamp)
+    Note right of C: Client requests frame at specific timestamp
+    
     VCS->>VCS: Check user's last watch position
     VCS->>VS: getFrame(videoID, timestamp)
+    Note over VCS,VS: Service retrieves frame
+    
     VS->>FS: getVideo(videoID)
     FS-->>VS: Return Video
     VS-->>VCS: Return Frame
     VCS-->>C: Display Frame
+    
+    %% Styling
+    rect rgba(30, 58, 26, 0.1)
+    Note over FS: File System Access
+    end
 ```
 
 ## Performance Considerations
