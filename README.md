@@ -17,11 +17,17 @@ LL-System-Design/
 │   │   ├── Java File
 │   │   └── README.md
 │   └── Video-Player.pdf
-├── Day01/                # Day 1: OOPs & SOLID Principles
-│   ├── Day01.pdf         
-│   ├── Code/               
-│   │   ├── Java File
-│   │   └── README.md
+│ 
+├── Day01/                # Day 1: OOPs & SOLID Principles       
+│   ├── Code/
+│   │   ├── Polymorphism
+│   │   │   ├── Java File
+│   │   │   └── README.md
+│   │   └── SOLID Principles
+│   │       ├── Java File
+│   │       └── README.md
+│   └── Day01.pdf
+│ 
 ├── Day02/                # Day 2: [Topic]
 │   ├── Day02.pdf
 │   ├── Code/
