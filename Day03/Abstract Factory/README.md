@@ -69,9 +69,18 @@ classDiagram
     classDef concrete fill:#1e3a8a,stroke:#3b82f6,color:#e0e0e0,stroke-width:2px
     classDef factory fill:#5b21b6,stroke:#8b5cf6,color:#e0e0e0,stroke-width:2px
     
-    class MainCourse,Beverage,MealFactory interface
-    class VegMainCourse,NonVegMainCourse,VegBeverage,NonVegBeverage concrete
-    class VegMealFactory,NonVegMealFactory factory
+    %% Apply styles to individual classes
+    class MainCourse interface
+    class Beverage interface
+    class MealFactory interface
+    
+    class VegMainCourse concrete
+    class NonVegMainCourse concrete
+    class VegBeverage concrete
+    class NonVegBeverage concrete
+    
+    class VegMealFactory factory
+    class NonVegMealFactory factory
 ```
 
 ## 🚀 How It Works

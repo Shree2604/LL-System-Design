@@ -47,8 +47,13 @@ classDiagram
     classDef factory fill:#5b21b6,stroke:#8b5cf6,color:#e0e0e0,stroke-width:2px
     classDef client fill:#9d174d,stroke:#ec4899,color:#e0e0e0,stroke-width:2px
     
+    %% Apply styles to individual classes
     class Restaurant interface
-    class PizzaCorner,BurgerHouse,SushiExpress concrete
+    
+    class PizzaCorner concrete
+    class BurgerHouse concrete
+    class SushiExpress concrete
+    
     class RestaurantFactory factory
     class SimpleFactorySwiggy client
 ```

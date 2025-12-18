@@ -61,9 +61,17 @@ classDiagram
     classDef concrete fill:#1e3a8a,stroke:#3b82f6,color:#e0e0e0,stroke-width:2px
     classDef creator fill:#5b21b6,stroke:#8b5cf6,color:#e0e0e0,stroke-width:2px
     
+    %% Apply styles to individual classes
     class Delivery interface
-    class BikeDelivery,CarDelivery,DroneDelivery concrete
-    class DeliveryCreator,UrbanDeliveryCreator,LongDistanceDeliveryCreator,ExperimentalDeliveryCreator creator
+    
+    class BikeDelivery concrete
+    class CarDelivery concrete
+    class DroneDelivery concrete
+    
+    class DeliveryCreator creator
+    class UrbanDeliveryCreator creator
+    class LongDistanceDeliveryCreator creator
+    class ExperimentalDeliveryCreator creator
 ```
 
 ## 🚀 How It Works
