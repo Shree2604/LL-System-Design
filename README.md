@@ -34,6 +34,10 @@ graph TD
     C12 --> C121[Java File]
     C12 --> C122[README.md]
     C --> C2[Day01.pdf]
+
+    %% Day02 Structure
+    D --> D1[UML Diagram.pdf]
+    D --> D2[Day02.pdf]
     
     %% Styling
     classDef folder fill:#2b2b2b,stroke:#4a4a4a,color:#e0e0e0,stroke-width:2px
@@ -50,8 +54,9 @@ graph TD
 
 | Day | Topic | Status |
 |-----|-------|--------|
-| 00  | [Basic Video Player System Design](#) | ✅ Completed |
-| 01  | [OOPs & SOLID Principles](#) | ✅ Completed |
+| 00  | [Basic Video Player System Design](Video-Player/) | ✅ Completed |
+| 01  | [OOPs & SOLID Principles](Day01/) | ✅ Completed |
+| 02  | [UML Diagram & Types of Design Patterns](Day02/) | ✅ Completed |
 
 ## 🚀 Getting Started
 
