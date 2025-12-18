@@ -1,0 +1,52 @@
+# Low-Level System Design
+
+## 📚 Overview
+This repository is a comprehensive collection of Low-Level System Design patterns, case studies, and best practices. It's designed to help you prepare for system design interviews and build robust, scalable systems in real-world scenarios.
+
+## 🎯 Purpose
+- Understand fundamental system design concepts and patterns
+- Learn through practical case studies of popular systems
+- Prepare for system design interviews with real-world examples
+- Implement best practices for building scalable and maintainable systems
+
+## 📂 Repository Structure
+```
+LL-System-Design/
+├── Video-Player/         # Video Player System Design
+│   ├── Code/    
+│   └── README.md         
+├── Day01/                # Day 1: [Topic]
+│   ├── notes.md          
+│   ├── code/             
+│   └── README.md         
+├── Day02/                # Day 2: [Topic]
+│   ├── notes.md
+│   ├── code/
+│   └── README.md
+...
+├── Day15/                # Day 15: [Topic]
+│   ├── notes.md
+│   ├── code/
+│   └── README.md
+
+
+```
+
+## 📅 Daily Progress
+
+| Day | Topic | Status |
+|-----|-------|--------|
+| 00  | [Video Player System Design]() | ✀ |
+
+## 🚀 Getting Started
+1. Clone the repository
+2. Explore different design patterns and case studies
+3. Study the implementation details
+4. Try to implement your own solutions
+5. Compare with the provided solutions
+
+## 🤝 Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
