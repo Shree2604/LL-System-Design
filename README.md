@@ -16,28 +16,44 @@ graph TD
     A[LL-System-Design] --> B[Video-Player/]
     A --> C[Day01/]
     A --> D[Day02/]
-    A --> E[...]
-    A --> F[Day15/]
+    A --> E[Day03/]
     
     %% Video-Player Structure
     B --> B1[Code/]
-    B1 --> B11[Java File]
+    B1 --> B11[VideoPlayer.java]
     B1 --> B12[README.md]
     B --> B2[Video-Player.pdf]
     
     %% Day01 Structure
-    C --> C1[Code/]
-    C1 --> C11[Polymorphism/]
-    C11 --> C111[Java File]
-    C11 --> C112[README.md]
-    C1 --> C12[SOLID Principles/]
-    C12 --> C121[Java File]
-    C12 --> C122[README.md]
-    C --> C2[Day01.pdf]
+    C --> C1[Polymorphism/]
+    C1 --> C11[SwiggyPolymorphism.java]
+    C1 --> C12[README.md]
+    C1 --> C13[Explanation.txt]
+    
+    C --> C2[SOLID Principals/]
+    C2 --> C21[SwiggySOLID.java]
+    C2 --> C22[README.md]
+    
+    C --> C3[Day01.pdf]
 
     %% Day02 Structure
     D --> D1[UML Diagram.pdf]
     D --> D2[Day02.pdf]
+    
+    %% Day03 Structure (Design Patterns)
+    E --> E1[Abstract Factory/]
+    E1 --> E11[AbstractFactorySwiggy.java]
+    E1 --> E12[README.md]
+    
+    E --> E2[Factory Method/]
+    E2 --> E21[FactoryMethodSwiggy.java]
+    E2 --> E22[README.md]
+    
+    E --> E3[Simple Factory/]
+    E3 --> E31[SimpleFactorySwiggy.java]
+    E3 --> E32[README.md]
+    
+    E --> E4[Day03.pdf]
     
     %% Root Level Files
     A --> A1[README.md]
@@ -50,9 +66,10 @@ graph TD
     classDef readme fill:#5b21b6,stroke:#8b5cf6,color:#e0e0e0,stroke-width:2px
     classDef license fill:#9d174d,stroke:#ec4899,color:#e0e0e0,stroke-width:2px
     
-    class A,C1,C11,C12,B1 folder
-    class B11,B12,C111,C112,C121,C122 file
-    class B2,C2,D1,D2 doc
+    %% Apply styles
+    class A,B1,C1,C2,E1,E2,E3 folder
+    class B11,B12,C11,C12,C13,C21,C22,E11,E12,E21,E22,E31,E32 file
+    class B2,C3,D1,D2,E4 doc
     class A1 readme
     class A2 license
 ```
@@ -63,6 +80,7 @@ graph TD
 | 00  | [Basic Video Player System Design](Video-Player/) |
 | 01  | [OOPs & SOLID Principles](Day01/) |
 | 02  | [UML Diagram & Types of Design Patterns](Day02/) |
+| 03  | [Factory Design Patterns](Day03/) |
 
 ## 🚀 Getting Started
 
