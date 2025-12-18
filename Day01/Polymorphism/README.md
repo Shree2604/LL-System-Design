@@ -38,11 +38,13 @@ graph TD
 
 ### Compile-time Polymorphism (Method Overloading)
 ```mermaid
-flowchart LR
-    A[OrderHelper] -->|1. assignOrder(String name)|
-    A -->|2. assignOrder(String name, String vehicle)|
+classDiagram
+    class OrderHelper {
+        +assignOrder(String partnerName)
+        +assignOrder(String partnerName, String vehicle)
+    }
     
-    style A fill:#9f9,stroke:#333,stroke-width:2px
+    style OrderHelper fill:#9f9,stroke:#333,stroke-width:2px
 ```
 
 ## Types of Polymorphism Demonstrated
