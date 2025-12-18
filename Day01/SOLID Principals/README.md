@@ -124,13 +124,27 @@ classDiagram
 
 ### 5. Dependency Inversion Principle (DIP)
 ```mermaid
-flowchart TD
-    A[SwiggyApp] -->|Depends on| B[PaymentService Interface]
-    B <|-- C[UpiPayment]
+classDiagram
+    class SwiggyApp {
+        -PaymentService paymentService
+        +makePayment(double)
+    }
     
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#9f9,stroke:#333,stroke-width:2px
-    style C fill:#bbf,stroke:#333,stroke-width:2px
+    class PaymentService {
+        <<interface>>
+        +processPayment(double)
+    }
+    
+    class UpiPayment {
+        +processPayment(double)
+    }
+    
+    SwiggyApp --> PaymentService : depends on
+    UpiPayment ..|> PaymentService : implements
+    
+    style SwiggyApp fill:#f9f,stroke:#333,stroke-width:2px
+    style PaymentService fill:#9f9,stroke:#333,stroke-width:2px
+    style UpiPayment fill:#bbf,stroke:#333,stroke-width:2px
 ```
 
 This project demonstrates the five SOLID principles of object-oriented programming using a Swiggy-like food delivery system as an example.
