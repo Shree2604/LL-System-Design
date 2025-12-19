@@ -131,7 +131,7 @@ graph TD
 | 03  | [Factory Design Patterns](Day03/) |
 | 04  | [Builder, Factory, Singleton & Prototype Design Patterns](Day04/) |
 | 05  | [Behavioral Design Patterns - Command & Observer](Day05/) |
-| 06  | [Advanced Design Patterns - Chain of Responsibility, Command & Iterator](Day06/) |
+| 06  | [Chain of Responsibility, Command & Iterator DP](Day06/) |
 
 ## 🚀 Getting Started
 
