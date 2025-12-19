@@ -17,6 +17,7 @@ graph TD
     A --> C[Day01/]
     A --> D[Day02/]
     A --> E[Day03/]
+    A --> F[Day04/]
     
     %% Video-Player Structure
     B --> B1[Code/]
@@ -55,6 +56,25 @@ graph TD
     
     E --> E4[Day03.pdf]
     
+    %% Day04 Structure (Design Patterns)
+    F --> F1[Singleton DP/]
+    F1 --> F11[AppConfigDemo.java]
+    F1 --> F12[README.md]
+    
+    F --> F2[Builder DP/]
+    F2 --> F21[VehicleBuilderDemo.java]
+    F2 --> F22[README.md]
+    
+    F --> F3[Factory DP/]
+    F3 --> F31[VehicleFactoryDemo.java]
+    F3 --> F32[README.md]
+    
+    F --> F4[Prototype DP/]
+    F4 --> F41[VehiclePrototypeDemo.java]
+    F4 --> F42[README.md]
+    
+    F --> F5[Day04.pdf]
+    
     %% Root Level Files
     A --> A1[README.md]
     A --> A2[LICENSE]
@@ -67,13 +87,12 @@ graph TD
     classDef license fill:#9d174d,stroke:#ec4899,color:#e0e0e0,stroke-width:2px
     
     %% Apply styles
-    class A,B1,C1,C2,E1,E2,E3 folder
-    class B11,B12,C11,C12,C13,C21,C22,E11,E12,E21,E22,E31,E32 file
-    class B2,C3,D1,D2,E4 doc
+    class A,B1,C1,C2,E1,E2,E3,F1,F2,F3,F4 folder
+    class B11,B12,C11,C12,C13,C21,C22,E11,E12,E21,E22,E31,E32,F11,F12,F21,F22,F31,F32,F41,F42 file
+    class B2,C3,D1,D2,E4,F5 doc
     class A1 readme
     class A2 license
 ```
-
 
 | Day | Topic | 
 |-----|-------|
@@ -81,6 +100,7 @@ graph TD
 | 01  | [OOPs & SOLID Principles](Day01/) |
 | 02  | [UML Diagram & Types of Design Patterns](Day02/) |
 | 03  | [Factory Design Patterns](Day03/) |
+| 04  | [Builder, Factory, Singleton & Prototype Design Patterns](Day04/) |
 
 ## 🚀 Getting Started
 
