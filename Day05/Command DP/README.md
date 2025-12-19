@@ -8,8 +8,8 @@ Encapsulate a request as an object, thereby letting you parameterize clients wit
 ## 📊 Architecture
 
 ```mermaid
-theme: dark
 classDiagram
+    %%{init: {'theme': 'dark'}}%%
     class Command {
         <<interface>>
         +execute()

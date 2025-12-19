@@ -8,8 +8,8 @@ Define a one-to-many dependency between objects so that when one object changes 
 ## 📊 Architecture
 
 ```mermaid
-theme: dark
 classDiagram
+    %%{init: {'theme': 'dark'}}%%
     class Subject {
         <<interface>>
         +registerObserver(o: Observer)
