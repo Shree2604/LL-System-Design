@@ -13,44 +13,47 @@ classDiagram
     class Command {
         <<interface>>
         +execute()
-        +undo()
     }
     
-    class LightOnCommand {
+    class TurnLightOnCommand {
         -light: Light
         +execute()
-        +undo()
+    }
+    
+    class TurnLightOffCommand {
+        -light: Light
+        +execute()
     }
     
     class Light {
-        +on()
-        +off()
+        +turnOn()
+        +turnOff()
     }
     
     class RemoteControl {
-        -onCommands: Command[]
-        -offCommands: Command[]
-        +setCommand(slot: int, onCommand: Command, offCommand: Command)
-        +onButtonWasPushed(slot: int)
-        +offButtonWasPushed(slot: int)
+        -command: Command
+        +setCommand(command: Command)
+        +pressButton()
     }
     
-    Command <|-- LightOnCommand
-    LightOnCommand --> Light
+    Command <|-- TurnLightOnCommand
+    Command <|-- TurnLightOffCommand
+    TurnLightOnCommand --> Light
+    TurnLightOffCommand --> Light
     RemoteControl --> Command
 ```
 
 ## 🎯 When to Use
 - Need to parameterize objects by an action to perform
-- Need to specify, queue, and execute requests at different times
-- Need to support undo/redo operations
-- Need to support logging changes
+- Need to decouple sender from receiver
+- Need to support queuing, logging, or undoable operations
+- Need to support callback functionality
 
 ## ✅ Pros
-- Decouples the object that invokes the operation from the one that knows how to perform it
-- Commands can be manipulated and extended like any other object
-- Easy to implement undo/redo functionality
-- Can assemble commands into composite commands
+- Decouples the invoker (RemoteControl) from the receiver (Light)
+- New commands can be added without changing existing code
+- Commands can be queued, logged, or undone
+- Follows Single Responsibility and Open/Closed principles
 
 ## ❌ Cons
 - Can lead to an increase in the number of classes
@@ -65,19 +68,21 @@ Think of a restaurant order. The waiter (Invoker) takes the order (Command) from
 - Invoker asks the command to carry out the request
 - Receiver knows how to perform the operations
 
-## 📝 Example Usage
+## Example Usage
 ```java
 // Create the receiver
 Light light = new Light();
 
-// Create the command with the receiver
-Command lightOn = new LightOnCommand(light);
+// Create commands
+Command turnOn = new TurnLightOnCommand(light);
+Command turnOff = new TurnLightOffCommand(light);
 
-// Create the invoker and set the command
+// Create invoker
 RemoteControl remote = new RemoteControl();
-remote.setCommand(0, lightOn, null);
 
-// Execute the command
+// Turn ON
+remote.setCommand(turnOn);
+remote.pressButton();
 remote.onButtonWasPushed(0);
 ```
 

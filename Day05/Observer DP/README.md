@@ -19,41 +19,36 @@ classDiagram
     
     class Observer {
         <<interface>>
-        +update(temp: float, humidity: float, pressure: float)
+        +update(price: float)
     }
     
-    class DisplayElement {
-        <<interface>>
-        +display()
-    }
-    
-    class WeatherData {
+    class StockMarket {
         -observers: List~Observer~
-        -temperature: float
-        -humidity: float
-        -pressure: float
-        +measurementsChanged()
-        +setMeasurements(temp: float, humidity: float, pressure: float)
+        -stockPrice: float
+        +setStockPrice(price: float)
+        +registerObserver(o: Observer)
+        +removeObserver(o: Observer)
+        +notifyObservers()
     }
     
-    class CurrentConditionsDisplay {
-        -temperature: float
-        -humidity: float
-        -weatherData: Subject
-        +update(temp: float, humidity: float, pressure: float)
-        +display()
+    class MobileApp {
+        +update(price: float)
     }
     
-    Subject <|-- WeatherData
-    Observer <|-- CurrentConditionsDisplay
-    DisplayElement <|-- CurrentConditionsDisplay
-    WeatherData o-- Observer
+    class WebApp {
+        +update(price: float)
+    }
+    
+    Subject <|-- StockMarket
+    Observer <|-- MobileApp
+    Observer <|-- WebApp
+    StockMarket o-- Observer
 ```
 
 ## 🎯 When to Use
-- When an abstraction has two aspects, one dependent on the other
-- When a change to one object requires changing others
+- When changes to one object require changing other objects
 - When an object should be able to notify other objects without making assumptions about who those objects are
+- In event handling, listeners, UI updates, stock price trackers, and notification systems
 
 ## ✅ Pros
 - Loose coupling between Subject and Observer
@@ -67,34 +62,45 @@ classDiagram
 - Update order isn't specified, which can lead to subtle bugs
 
 ## 🔍 Real-world Analogy
-Think of a news subscription service. When a new edition of a newspaper comes out, all subscribers receive it. The publisher doesn't need to know who the subscribers are, just that they need to be notified of new editions.
+Think of a stock market ticker. When a stock price changes, all subscribed applications (mobile, web, etc.) are automatically updated with the new price. The stock market doesn't need to know about the specific applications, just that they need to be notified of price changes.
 
 ## 🛠️ Implementation Details
-- `Subject` interface manages the observers
-- `Observer` interface defines the update method
-- Concrete subjects implement the subject interface
-- Concrete observers implement the observer interface
+- `Subject` interface manages the observers (register, remove, notify)
+- `Observer` interface defines the update method for notifications
+- `StockMarket` is the concrete subject that maintains stock price and notifies observers
+- `MobileApp` and `WebApp` are concrete observers that receive updates
 
 ## 📝 Example Usage
 ```java
-// Create the subject
-WeatherData weatherData = new WeatherData();
+// Create subject (publisher)
+StockMarket stock = new StockMarket();
 
-// Create observers
-CurrentConditionsDisplay currentDisplay = 
-    new CurrentConditionsDisplay(weatherData);
+// Create observers (subscribers)
+Observer mobileApp = new MobileApp();
+Observer webApp = new WebApp();
 
-// Simulate new weather measurements
-weatherData.setMeasurements(80, 65, 30.4f);
-weatherData.setMeasurements(82, 70, 29.2f);
-weatherData.setMeasurements(78, 90, 29.2f);
-```
+// Register observers
+stock.registerObserver(mobileApp);
+stock.registerObserver(webApp);
+
+// Update stock price (triggers notifications)
+System.out.println("Setting stock price to 120.5");
+stock.setStockPrice(120.5f);   // Both observers get update
+
+// Remove an observer
+System.out.println("\nRemoving WebApp Observer...");
+stock.removeObserver(webApp);  // WebApp unsubscribes
+
+// Update again (only MobileApp gets notified)
+System.out.println("\nSetting stock price to 125.75");
+stock.setStockPrice(125.75f);
 
 ## 🌟 Key Points
-- Subjects know their observers through a common interface
-- Observers are loosely coupled to the subject
-- Can add/remove observers at runtime
-- Avoids polling for changes
+- The `StockMarket` maintains a list of observers and notifies them of price changes
+- Observers (`MobileApp`, `WebApp`) implement the `Observer` interface
+- New observer types can be added without modifying the `StockMarket` class
+- Observers can subscribe/unsubscribe at runtime
+- The subject doesn't need to know the concrete classes of its observers
 
 </div>
 

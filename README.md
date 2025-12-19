@@ -18,6 +18,7 @@ graph TD
     A --> D[Day02/]
     A --> E[Day03/]
     A --> F[Day04/]
+    A --> G[Day05/]
     
     %% Video-Player Structure
     B --> B1[Code/]
@@ -75,6 +76,17 @@ graph TD
     
     F --> F5[Day04.pdf]
     
+    %% Day05 Structure (Behavioral Patterns)
+    G --> G1[Command DP/]
+    G1 --> G11[CommandPatternDemo.java]
+    G1 --> G12[README.md]
+    
+    G --> G2[Observer DP/]
+    G2 --> G21[ObserverPatternDemo.java]
+    G2 --> G22[README.md]
+    
+    G --> G3[Day05.pdf]
+    
     %% Root Level Files
     A --> A1[README.md]
     A --> A2[LICENSE]
@@ -87,9 +99,9 @@ graph TD
     classDef license fill:#9d174d,stroke:#ec4899,color:#e0e0e0,stroke-width:2px
     
     %% Apply styles
-    class A,B1,C1,C2,E1,E2,E3,F1,F2,F3,F4 folder
-    class B11,B12,C11,C12,C13,C21,C22,E11,E12,E21,E22,E31,E32,F11,F12,F21,F22,F31,F32,F41,F42 file
-    class B2,C3,D1,D2,E4,F5 doc
+    class A,B1,C1,C2,E1,E2,E3,F1,F2,F3,F4,G1,G2 folder
+    class B11,B12,C11,C12,C13,C21,C22,E11,E12,E21,E22,E31,E32,F11,F12,F21,F22,F31,F32,F41,F42,G11,G12,G21,G22 file
+    class B2,C3,D1,D2,E4,F5,G3 doc
     class A1 readme
     class A2 license
 ```
@@ -101,6 +113,7 @@ graph TD
 | 02  | [UML Diagram & Types of Design Patterns](Day02/) |
 | 03  | [Factory Design Patterns](Day03/) |
 | 04  | [Builder, Factory, Singleton & Prototype Design Patterns](Day04/) |
+| 05  | [Behavioral Design Patterns - Command & Observer](Day05/) |
 
 ## 🚀 Getting Started
 
