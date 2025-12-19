@@ -19,6 +19,7 @@ graph TD
     A --> E[Day03/]
     A --> F[Day04/]
     A --> G[Day05/]
+    A --> H[Day06/]
     
     %% Video-Player Structure
     B --> B1[Code/]
@@ -87,6 +88,22 @@ graph TD
     
     G --> G3[Day05.pdf]
     
+    %% Day06 Structure (Advanced Patterns)
+    H --> H1[Chain of Responsibility DP/]
+    H1 --> H11[chain_responsibility_order.java]
+    H1 --> H12[README.md]
+    
+    H --> H2[Command DP/]
+    H2 --> H21[command_pattern_impl.java]
+    H2 --> H22[uber_command_pattern.java]
+    H2 --> H23[README.md]
+    
+    H --> H3[Iterator DP/]
+    H3 --> H31[amazon_inventory_iterator.java]
+    H3 --> H32[README.md]
+    
+    H --> H4[Day06.pdf]
+    
     %% Root Level Files
     A --> A1[README.md]
     A --> A2[LICENSE]
@@ -99,9 +116,9 @@ graph TD
     classDef license fill:#9d174d,stroke:#ec4899,color:#e0e0e0,stroke-width:2px
     
     %% Apply styles
-    class A,B1,C1,C2,E1,E2,E3,F1,F2,F3,F4,G1,G2 folder
-    class B11,B12,C11,C12,C13,C21,C22,E11,E12,E21,E22,E31,E32,F11,F12,F21,F22,F31,F32,F41,F42,G11,G12,G21,G22 file
-    class B2,C3,D1,D2,E4,F5,G3 doc
+    class A,B1,C1,C2,E1,E2,E3,F1,F2,F3,F4,G1,G2,H1,H2,H3 folder
+    class B11,B12,C11,C12,C13,C21,C22,E11,E12,E21,E22,E31,E32,F11,F12,F21,F22,F31,F32,F41,F42,G11,G12,G21,G22,H11,H12,H21,H22,H23,H31,H32 file
+    class B2,C3,D1,D2,E4,F5,G3,H4 doc
     class A1 readme
     class A2 license
 ```
@@ -114,6 +131,7 @@ graph TD
 | 03  | [Factory Design Patterns](Day03/) |
 | 04  | [Builder, Factory, Singleton & Prototype Design Patterns](Day04/) |
 | 05  | [Behavioral Design Patterns - Command & Observer](Day05/) |
+| 06  | [Advanced Design Patterns - Chain of Responsibility, Command & Iterator](Day06/) |
 
 ## 🚀 Getting Started
 
