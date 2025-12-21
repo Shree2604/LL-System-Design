@@ -13,7 +13,6 @@ SOLID is a set of **5 design principles** that help you write better object-orie
 
 Think of SOLID as **architectural rules** for building software that won't collapse under its own weight.
 
----
 
 ## 🎯 The 5 SOLID Principles
 
@@ -25,15 +24,12 @@ Think of SOLID as **architectural rules** for building software that won't colla
 | **I** - Interface Segregation | Don't force classes to implement unused methods |
 | **D** - Dependency Inversion | Depend on abstractions, not concrete implementations |
 
----
 
 ## 🔴 Before & After: Real Use Case
 
 ### **Use Case: E-commerce Order Processing System**
 
 Let's see how SOLID transforms clumsy code into professional code.
-
----
 
 ## 1️⃣ **S - Single Responsibility Principle**
 
@@ -119,7 +115,7 @@ class InvoiceGenerator:
 - Easy to test individually
 - Changes are isolated (email changes don't affect Order)
 
----
+
 
 ## 2️⃣ **O - Open/Closed Principle**
 
@@ -191,7 +187,7 @@ processor.process_payment(200, BitcoinPayment())  # Works seamlessly!
 - Less risk of bugs
 - Scales infinitely
 
----
+
 
 ## 3️⃣ **L - Liskov Substitution Principle**
 
@@ -263,7 +259,7 @@ make_bird_fly(Sparrow())  # ✅ Works
 - Type system prevents errors
 - Clear hierarchies
 
----
+
 
 ## 4️⃣ **I - Interface Segregation Principle**
 
@@ -355,7 +351,7 @@ class Robot(Workable):  # Only implements what it needs!
 - Clear, focused interfaces
 - Easier to understand and maintain
 
----
+
 
 ## 5️⃣ **D - Dependency Inversion Principle**
 
@@ -433,7 +429,6 @@ service = UserService(MockDatabase())  # For testing!
 - Easy to test (use mock)
 - Loose coupling
 
----
 
 ## 📋 Quick Checklist: Is Your Code SOLID?
 
@@ -445,7 +440,7 @@ Use this checklist when writing/reviewing code:
 - [ ] **I**: Are my interfaces focused and not bloated?
 - [ ] **D**: Am I depending on abstractions rather than concrete classes?
 
----
+
 
 ## 🎓 Step-by-Step: Refactoring Clumsy Code to SOLID
 
@@ -469,7 +464,6 @@ Use this checklist when writing/reviewing code:
 - Each class should be testable in isolation
 - Use mocks for dependencies
 
----
 
 ## 🛠️ Real-World Example: Complete Refactoring
 
@@ -549,7 +543,6 @@ class OrderProcessor:
         self.invoice_generator.generate(order)
 ```
 
----
 
 ## 🎯 Benefits Summary
 
@@ -561,7 +554,6 @@ class OrderProcessor:
 | 🔴 Fragile code | ✅ Robust code |
 | 🔴 Difficult to understand | ✅ Self-documenting |
 
----
 
 ## 📚 Resources
 
@@ -569,18 +561,13 @@ class OrderProcessor:
 - [Refactoring Guru - SOLID Principles](https://refactoring.guru/design-patterns/solid-principles)
 - [SOLID Principles Explained with Examples](https://stackify.com/solid-design-principles/)
 
----
 
 ## 🤝 Contributing
 
 Found a better example? Want to add more use cases? PRs are welcome!
 
----
-
 ## 📝 License
 
 MIT License - Feel free to use this cheat sheet in your projects!
-
----
 
 **Remember:** SOLID principles are guidelines, not laws. Use them wisely, but don't over-engineer. Start simple, refactor when needed! 🚀
