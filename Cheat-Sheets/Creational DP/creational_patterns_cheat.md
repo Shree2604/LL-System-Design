@@ -2,7 +2,6 @@
 
 > A comprehensive guide to all creational design patterns with real-world e-commerce examples for interview preparation.
 
----
 
 ## Quick Overview
 
@@ -14,7 +13,7 @@
 | **Builder** | Construct complex objects step-by-step | Readable construction with many parameters | Complex configurations, fluent APIs |
 | **Prototype** | Clone existing objects | Avoid costly initialization | Object pooling, config templates |
 
----
+
 
 ## Detailed Pattern Reference
 
@@ -55,7 +54,7 @@ public class CartSessionManager {
 | **Pros** | ✓ Controlled access<br>✓ Lazy initialization<br>✓ Global access |
 | **Cons** | ✗ Difficult to test (global state)<br>✗ Violates Single Responsibility<br>✗ Thread-safety concerns |
 
----
+
 
 ### 2. Factory Method Pattern
 
@@ -103,7 +102,6 @@ class CryptoProcessor extends PaymentProcessor {
 | **Pros** | ✓ Open/Closed Principle<br>✓ Single Responsibility<br>✓ Loose coupling |
 | **Cons** | ✗ Can create many subclasses<br>✗ More complex code structure |
 
----
 
 ### 3. Abstract Factory Pattern
 
@@ -157,7 +155,7 @@ class CheckoutPage {
 | **Pros** | ✓ Ensures product compatibility<br>✓ Isolates concrete classes<br>✓ Easy to exchange product families |
 | **Cons** | ✗ Difficult to add new products<br>✗ Increases complexity<br>✗ Many classes/interfaces |
 
----
+
 
 ### 4. Builder Pattern
 
@@ -250,7 +248,7 @@ ProductSearchQuery laptopSearch = new ProductSearchQuery.Builder()
 | **Pros** | ✓ Readable code (fluent interface)<br>✓ Different representations<br>✓ Control over construction |
 | **Cons** | ✗ More code complexity<br>✗ Requires creating separate Builder class |
 
----
+
 
 ### 5. Prototype Pattern
 
@@ -334,7 +332,6 @@ xps32GB.setBasePrice(1500.0);
 | **Pros** | ✓ Reduces initialization cost<br>✓ Simplifies object creation<br>✓ Dynamic configuration |
 | **Cons** | ✗ Cloning complex objects is tricky<br>✗ Deep copy implementation complexity<br>✗ Circular references can cause issues |
 
----
 
 ## Pattern Comparison Table
 
@@ -350,7 +347,7 @@ xps32GB.setBasePrice(1500.0);
 | Cross-platform UI | **Abstract Factory** | Platform-specific component families |
 | Configuration objects | **Builder** or **Prototype** | Builder for creation, Prototype for templates |
 
----
+
 
 ## Interview Quick Tips
 
@@ -377,5 +374,4 @@ xps32GB.setBasePrice(1500.0);
 
 **Remember:** Design patterns are tools, not rules. The best pattern is the one that solves your specific problem most simply and clearly.
 
-**Star this repo** ⭐ if you found it helpful for your interview prep!
 
