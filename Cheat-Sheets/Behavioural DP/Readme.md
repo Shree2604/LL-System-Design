@@ -2,7 +2,6 @@
 
 > A comprehensive guide to all behavioral design patterns with real-world e-commerce examples for interview preparation.
 
----
 
 ## Quick Overview
 
@@ -20,7 +19,6 @@
 | **Visitor** | Add operations to objects without changing them | Add new operations easily | Reporting, analysis on object structures |
 | **Interpreter** | Define grammar and interpret sentences | Domain-specific languages | Search queries, rule engines |
 
----
 
 ## Detailed Pattern Reference
 
@@ -103,8 +101,6 @@ double total = cart.checkout();
 | **Interview Pitfalls** | - Strategy changes behavior, State changes based on internal state<br>- Client must know about different strategies<br>- Can increase number of objects in application |
 | **Pros** | ✓ Open/Closed Principle<br>✓ Runtime algorithm switching<br>✓ Eliminates conditionals |
 | **Cons** | ✗ Client must be aware of strategies<br>✗ Increases number of objects<br>✗ Overkill for simple cases |
-
----
 
 ### 2. Observer Pattern
 
@@ -201,7 +197,6 @@ iPhone.setStock(50); // Triggers notifications to all subscribers
 | **Pros** | ✓ Loose coupling<br>✓ Dynamic relationships<br>✓ Broadcast communication |
 | **Cons** | ✗ Memory leaks if not detached<br>✗ Unexpected updates<br>✗ No control over notification order |
 
----
 
 ### 3. Command Pattern
 
@@ -321,7 +316,6 @@ manager.redo(); // Adds mouse back
 | **Pros** | ✓ Undo/Redo support<br>✓ Deferred execution<br>✓ Composable commands |
 | **Cons** | ✗ Increased number of classes<br>✗ Commands can become complex<br>✗ Memory overhead for history |
 
----
 
 ### 4. Chain of Responsibility Pattern
 
@@ -449,7 +443,7 @@ try {
 | **Pros** | ✓ Decouples sender/receiver<br>✓ Flexible chain configuration<br>✓ Single Responsibility |
 | **Cons** | ✗ No guarantee of handling<br>✗ Hard to debug long chains<br>✗ Performance impact |
 
----
+
 
 ### 5. State Pattern
 
@@ -581,7 +575,6 @@ order.printStatus();
 | **Pros** | ✓ Eliminates complex conditionals<br>✓ Single Responsibility<br>✓ Easy to add states |
 | **Cons** | ✗ Overkill for few states<br>✗ States know about transitions<br>✗ Increases number of classes |
 
----
 
 ### 6. Template Method Pattern
 
@@ -729,7 +722,6 @@ wholesaleProcessor.processOrder(wholesaleOrder);
 | **Pros** | ✓ Code reuse<br>✓ Control over extension points<br>✓ Common structure enforced |
 | **Cons** | ✗ Inheritance-based (less flexible)<br>✗ Liskov Substitution violations<br>✗ Limited by class structure |
 
----
 
 ### 7. Iterator Pattern
 
@@ -869,7 +861,7 @@ while (electronicsIterator.hasNext()) {
 | **Pros** | ✓ Single Responsibility<br>✓ Uniform interface<br>✓ Parallel iteration |
 | **Cons** | ✗ Overkill for simple collections<br>✗ Less efficient than direct access<br>✗ Complexity overhead |
 
----
+
 
 ### 8. Mediator Pattern
 
@@ -1089,7 +1081,6 @@ addressForm.updateAddress(new Address("123 Main St", "New York", "NY"));
 | **Pros** | ✓ Reduces coupling<br>✓ Centralizes control<br>✓ Easy to understand interactions |
 | **Cons** | ✗ Mediator can become complex<br>✗ Single point of failure<br>✗ Can violate Single Responsibility |
 
----
 
 ### 9. Memento Pattern
 
@@ -1238,7 +1229,6 @@ System.out.println("Total: $" + cart.getTotal());
 | **Pros** | ✓ Preserves encapsulation<br>✓ Simplifies originator<br>✓ State recovery |
 | **Cons** | ✗ Memory intensive<br>✗ Caretaker overhead<br>✗ State copying cost |
 
----
 
 ### 10. Visitor Pattern
 
@@ -1432,7 +1422,6 @@ System.out.println(exporter.getXML());
 | **Pros** | ✓ Easy to add operations<br>✓ Related operations together<br>✓ Visits different object types |
 | **Cons** | ✗ Hard to add new elements<br>✗ Breaks encapsulation<br>✗ Circular dependencies |
 
----
 
 ### 11. Interpreter Pattern
 
@@ -1624,7 +1613,6 @@ results = allProducts.stream()
 | **Pros** | ✓ Easy to change grammar<br>✓ Easy to add new rules<br>✓ Flexible expressions |
 | **Cons** | ✗ Complex grammars are hard<br>✗ Many classes for rules<br>✗ Performance issues |
 
----
 
 ## Pattern Comparison Table
 
@@ -1642,7 +1630,6 @@ results = allProducts.stream()
 | Different operations on product catalog | **Visitor** | Add operations without changing products |
 | Advanced search query language | **Interpreter** | Parse and execute custom queries |
 
----
 
 ## Pattern Relationships
 
@@ -1665,8 +1652,6 @@ Iterator ← → Visitor
 Chain of Responsibility ← → Command
 (pass request along vs encapsulate request)
 ```
-
----
 
 ## Interview Quick Tips
 
@@ -1699,52 +1684,3 @@ Chain of Responsibility ← → Command
 - Violates encapsulation (accesses internals)
 - Hard to add new element types
 - Better alternatives exist (Strategy for operations, double dispatch manually)
-
----
-
-## Real Interview Code Challenge
-
-**Problem:** "Design a discount system that applies multiple promotions to an order. Promotions can be percentage-based, fixed amount, buy-one-get-one, or category-specific. The system should validate eligibility and apply the best combination."
-
-**Solution using multiple patterns:**
-```java
-// Strategy for different discount types
-interface DiscountStrategy {
-    double calculate(Order order);
-    boolean isEligible(Order order);
-}
-
-class PercentageDiscount implements DiscountStrategy { /*...*/ }
-class FixedAmountDiscount implements DiscountStrategy { /*...*/ }
-class BuyOneGetOneDiscount implements DiscountStrategy { /*...*/ }
-
-// Chain of Responsibility for eligibility checks
-abstract class PromotionValidator {
-    protected PromotionValidator next;
-    void setNext(PromotionValidator next) { this.next = next; }
-    abstract void validate(Order order, Promotion promo);
-}
-
-// Observer for promotion notifications
-interface PromotionObserver {
-    void onPromotionApplied(Order order, Promotion promo, double savings);
-}
-
-// Command for applying promotions (with undo)
-class ApplyPromotionCommand implements Command {
-    private Order order;
-    private Promotion promotion;
-    private double previousTotal;
-    
-    public void execute() { /*...*/ }
-    public void undo() { /*...*/ }
-}
-```
-
----
-
-## Anti-Patterns to Avoid
-
-| Anti-Pattern | Description | Fix |
-|--------------|-------------|-----|
-| **God Mediator** |
