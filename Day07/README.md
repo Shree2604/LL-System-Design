@@ -5,30 +5,6 @@ This directory contains implementations of three design patterns in Java:
 2. Strategy Pattern with Factory
 3. Template Method Pattern
 
-## Table of Contents
-1. [Strategy Design Pattern](#strategy-design-pattern)
-   - [Overview](#overview)
-   - [Class Diagram](#class-diagram)
-   - [Implementation Details](#implementation-details)
-   - [Usage](#usage)
-   - [When to Use](#when-to-use)
-
-2. [Strategy + Factory Design Pattern](#strategy--factory-design-pattern)
-   - [Overview](#overview-1)
-   - [Class Diagram](#class-diagram-1)
-   - [Implementation Details](#implementation-details-1)
-   - [Usage](#usage-1)
-   - [Benefits](#benefits)
-   - [When to Use](#when-to-use-1)
-
-3. [Template Method Design Pattern](#template-method-design-pattern)
-   - [Overview](#overview-2)
-   - [Class Diagram](#class-diagram-2)
-   - [Implementation Details](#implementation-details-2)
-   - [Usage](#usage-2)
-   - [Benefits](#benefits-1)
-   - [When to Use](#when-to-use-2)
-
 ## Strategy Design Pattern
 
 ### Overview
