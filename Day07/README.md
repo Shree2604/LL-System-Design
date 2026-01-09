@@ -1,6 +1,9 @@
-# Design Patterns: Strategy and Strategy with Factory
+# Design Patterns: Strategy, Strategy with Factory, and Template Method
 
-This directory contains implementations of the Strategy design pattern and its combination with the Factory pattern in Java.
+This directory contains implementations of three design patterns in Java:
+1. Strategy Pattern
+2. Strategy Pattern with Factory
+3. Template Method Pattern
 
 ## Table of Contents
 1. [Strategy Design Pattern](#strategy-design-pattern)
@@ -15,9 +18,87 @@ This directory contains implementations of the Strategy design pattern and its c
    - [Implementation Details](#implementation-details-1)
    - [Usage](#usage-1)
 
+3. [Template Method Design Pattern](#template-method-design-pattern)
+   - [Overview](#overview-2)
+   - [Class Diagram](#class-diagram-2)
+   - [Implementation Details](#implementation-details-2)
+   - [Usage](#usage-2)
+
 ## Strategy Design Pattern
 
 ### Overview
+
+### Class Diagram
+
+### Implementation Details
+
+### Usage
+
+## Strategy + Factory Design Pattern
+
+### Overview
+
+### Class Diagram
+
+### Implementation Details
+
+### Usage
+
+## Template Method Design Pattern
+
+### Overview
+The Template Method pattern defines the skeleton of an algorithm in a method, deferring some steps to subclasses. It lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
+
+### Class Diagram
+```mermaid
+classDiagram
+    class OrderProcessingTemplate {
+        <<abstract>>
+        +processOrder()
+        #verifyOrder()
+        #assignDeliveryAgent()
+        #trackDelivery()
+    }
+    
+    class LocalOrderProcessor {
+        +verifyOrder()
+        +assignDeliveryAgent()
+        +trackDelivery()
+    }
+    
+    class InternationalOrderProcessor {
+        +verifyOrder()
+        +assignDeliveryAgent()
+        +trackDelivery()
+    }
+    
+    OrderProcessingTemplate <|-- LocalOrderProcessor
+    OrderProcessingTemplate <|-- InternationalOrderProcessor
+```
+
+### Implementation Details
+- **OrderProcessingTemplate**: Abstract class that defines the template method `processOrder()` and declares abstract methods for each step.
+- **LocalOrderProcessor**: Concrete implementation for processing local orders.
+- **InternationalOrderProcessor**: Concrete implementation for processing international orders.
+
+### Usage
+```java
+public class AmazonOrderProcessor {
+    public static void main(String[] args) {
+        // Process a local order
+        OrderProcessingTemplate localOrder = new LocalOrderProcessor();
+        System.out.println("Processing a local order:");
+        localOrder.processOrder();
+
+        // Process an international order
+        OrderProcessingTemplate internationalOrder = new InternationalOrderProcessor();
+        System.out.println("\nProcessing an international order:");
+        internationalOrder.processOrder();
+    }
+}
+```
+
+For more detailed information, see the [Template DP README](./Template%20DP/README.md).
 The Strategy pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
 
 ### Class Diagram

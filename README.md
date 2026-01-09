@@ -21,7 +21,7 @@ This repository is a comprehensive collection of Low-Level System Design pattern
 | 04  | [Builder, Factory, Singleton & Prototype Design Patterns](Day04/) |
 | 05  | [Behavioral Design Patterns - Command & Observer](Day05/) |
 | 06  | [Chain of Responsibility, Command & Iterator DP](Day06/) |
-| 07  | [Strategy Pattern & Strategy with Factory](Day07/) |
+| 07  | [Strategy Pattern, Strategy with Factory & Template Method](Day07/) |
 
 ## 🚀 Getting Started
 
